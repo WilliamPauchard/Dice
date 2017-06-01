@@ -3,7 +3,7 @@ package test.java.com.github.WilliamPauchard.domaine;
 import main.java.com.github.WilliamPauchard.domaine.Dice;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
+import org.mockito.Mockito.*;
 import java.util.ArrayList;
 
 import static org.testng.Assert.assertEquals;
@@ -11,8 +11,8 @@ import static org.testng.Assert.assertEquals;
 /**
  * @author william.pauchard
  */
-
 public class DiceTest {
+
     private ArrayList<Dice> dices = new ArrayList<Dice>();
     private int[] initialValues = {-1, -2, -3, -4, -5, -6, -7, -8, -9, -10};
 
@@ -46,4 +46,17 @@ public class DiceTest {
         }
     }
 
+    /*public void testMockito() throws Exception {
+        // mock creation
+        Dice mockedList = mock(Dice.class);
+
+        // using mock object - it does not throw any "unexpected interaction" exception
+        mockedList.add("one");
+        mockedList.clear();
+
+        // selective, explicit, highly readable verification
+        verify(mockedList).add("one");
+        verify(mockedList).clear();
+    }
+    */
 }
